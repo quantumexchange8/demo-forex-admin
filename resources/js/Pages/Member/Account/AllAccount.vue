@@ -2,10 +2,10 @@
 import DataTable from "primevue/datatable";
 import Column from "primevue/column";
 import {ref, watch, watchEffect} from "vue";
-import {FilterMatchMode} from "primevue/api";
+import {FilterMatchMode} from "@primevue/core/api";
 import Loader from "@/Components/Loader.vue";
 import DefaultProfilePhoto from "@/Components/DefaultProfilePhoto.vue";
-import OverlayPanel from 'primevue/overlaypanel';
+import Popover from 'primevue/popover';
 import Empty from "@/Components/Empty.vue";
 import dayjs from "dayjs";
 import AccountTableActions from "@/Pages/Member/Account/Partials/AccountTableActions.vue";
@@ -274,7 +274,7 @@ watchEffect(() => {
         </template>
     </DataTable>
 
-    <OverlayPanel ref="op">
+    <Popover ref="op">
         <div class="flex flex-col gap-8 w-60 py-5 px-4">
             <!-- Filter Last logged in-->
             <div class="flex flex-col gap-2 items-center self-stretch">
@@ -327,7 +327,7 @@ watchEffect(() => {
                 </Button>
             </div>
         </div>
-    </OverlayPanel>
+    </Popover>
 
     <Dialog
         v-model:visible="visible"

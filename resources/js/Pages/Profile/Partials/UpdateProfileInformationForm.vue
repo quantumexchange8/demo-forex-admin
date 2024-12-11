@@ -4,7 +4,7 @@ import InputLabel from '@/Components/InputLabel.vue';
 import Button from "@/Components/Button.vue"
 import { useForm, usePage } from '@inertiajs/vue3';
 import InputText from 'primevue/inputtext';
-import Dropdown from 'primevue/dropdown';
+import Select from 'primevue/select';
 import {ref, watch} from "vue";
 
 defineProps({

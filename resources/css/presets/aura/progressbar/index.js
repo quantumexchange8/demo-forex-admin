@@ -7,11 +7,11 @@ export default {
 
             // Shape and Size
             'border-0',
-            'h-1',
+            'h-5',
             'rounded-md',
 
             // Colors
-            'bg-gray-100'
+            'bg-surface-100 dark:bg-surface-800'
         ]
     },
     value: ({ props }) => ({
@@ -28,7 +28,6 @@ export default {
 
             // Shape
             'border-0',
-            'rounded-md',
 
             // Transitions
             {

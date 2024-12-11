@@ -3,7 +3,7 @@ import { IconWorld } from '@tabler/icons-vue';
 import {ref} from "vue";
 import {usePage} from "@inertiajs/vue3";
 import {loadLanguageAsync} from "laravel-vue-i18n";
-import OverlayPanel from 'primevue/overlaypanel';
+import Popover from 'primevue/popover';
 import dayjs from "dayjs";
 
 const op = ref();
@@ -54,7 +54,7 @@ const changeLanguage = async (langVal) => {
         </div>
     </div>
 
-    <OverlayPanel ref="op">
+    <Popover ref="op">
         <div class="py-2 flex flex-col items-center w-[120px]">
             <div
                 v-for="locale in locales"
@@ -65,5 +65,5 @@ const changeLanguage = async (langVal) => {
                 {{ locale.label }}
             </div>
         </div>
-    </OverlayPanel>
+    </Popover>
 </template>

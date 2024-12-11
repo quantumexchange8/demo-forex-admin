@@ -4,7 +4,7 @@ import {onMounted, ref, watchEffect, watch, reactive} from 'vue';
 import { transactionFormat } from '@/Composables/index.js';
 import {IconX, IconUserFilled, IconRefresh, IconDotsVertical} from '@tabler/icons-vue';
 import Button from '@/Components/Button.vue';
-import Calendar from 'primevue/calendar';
+import DatePicker from 'primevue/datepicker';
 import DefaultProfilePhoto from '@/Components/DefaultProfilePhoto.vue';
 import NewGroup from '@/Pages/Group/Partials/NewGroup.vue';
 import GroupMenu from '@/Pages/Group/Partials/GroupMenu.vue';
@@ -186,7 +186,7 @@ const refreshGroup = async (groupId) => {
             <div class="w-full py-6 px-4 md:p-6 flex flex-col items-center gap-6 self-stretch rounded-2xl border border-solid border-gray-200 bg-white shadow-table">
                 <div class="flex flex-col items-center gap-3 self-stretch md:flex-row md:justify-between">
                     <div class="relative w-full md:w-[272px]">
-                        <Calendar
+                        <DatePicker
                             v-model="selectedDate"
                             selectionMode="range"
                             :manualInput="false"

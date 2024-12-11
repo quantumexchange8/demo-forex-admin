@@ -2,7 +2,7 @@
 import { ref, watch } from 'vue';
 import { IconCloudDownload, IconX } from '@tabler/icons-vue';
 import Button from '@/Components/Button.vue';
-import Calendar from 'primevue/calendar';
+import DatePicker from 'primevue/datepicker';
 import Empty from '@/Components/Empty.vue';
 import Loader from "@/Components/Loader.vue";
 import DataTable from "primevue/datatable";
@@ -107,7 +107,7 @@ watch(selectedDate, (newDateRange) => {
                 <div class="flex flex-col md:flex-row gap-3 items-center self-stretch mb-5">
                     <div class="w-full flex flex-col gap-3 md:flex-row">
                         <div class="relative w-full md:w-[272px]">
-                            <Calendar
+                            <DatePicker
                                 v-model="selectedDate"
                                 selectionMode="range"
                                 :manualInput="false"

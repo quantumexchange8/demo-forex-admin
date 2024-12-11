@@ -8,9 +8,9 @@ import StatusBadge from '@/Components/StatusBadge.vue';
 import DefaultProfilePhoto from "@/Components/DefaultProfilePhoto.vue";
 import Empty from '@/Components/Empty.vue';
 import Loader from "@/Components/Loader.vue";
-import {FilterMatchMode} from "primevue/api";
+import {FilterMatchMode} from "@primevue/core/api";
 import { IconSearch, IconCircleXFilled, IconX } from '@tabler/icons-vue';
-import Calendar from 'primevue/calendar';
+import DatePicker from 'primevue/datepicker';
 import {transactionFormat} from "@/Composables/index.js";
 import dayjs from "dayjs";
 import ColumnGroup from "primevue/columngroup";
@@ -124,7 +124,7 @@ const handleFilter = (e) => {
                     </div>
                     <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-3">
                         <div class="relative w-full md:w-[272px]">
-                            <Calendar
+                            <DatePicker
                                 v-model="selectedDate"
                                 selectionMode="range"
                                 :manualInput="false"

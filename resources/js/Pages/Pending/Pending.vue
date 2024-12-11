@@ -1,6 +1,9 @@
 <script setup>
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
-import TabView from 'primevue/tabview';
+import Tabs from 'primevue/tabs';
+import TabList from 'primevue/tablist';
+import Tab from 'primevue/tab';
+import TabPanels from 'primevue/tabpanels';
 import TabPanel from 'primevue/tabpanel';
 import {h, ref} from "vue";
 import PendingWithdrawal from "@/Pages/Pending/Withdrawal/PendingWithdrawal.vue";
@@ -20,12 +23,17 @@ const tabs = ref([
 
 <template>
     <AuthenticatedLayout :title="$t('public.pending')">
-        <TabView
-            class="flex flex-col gap-5 self-stretch"
-        >
-            <TabPanel v-for="(tab, index) in tabs" :key="index" :header="$t(`public.${tab.title}`)">
-                <component :is="tab.component" />
-            </TabPanel>
-        </TabView>
+        <Tabs class="flex flex-col gap-5 self-stretch" :value="0">
+            <TabList>
+                <Tab v-for="(tab, index) in tabs" :key="tab.title" :value="index">
+                    {{ $t(`public.${tab.title}`) }}
+                </Tab>
+            </TabList>
+            <TabPanels>
+                <TabPanel v-for="(tab, index) in tabs" :key="tab.component" :value="index">
+                    <component :is="tab.component" />
+                </TabPanel>
+            </TabPanels>
+        </Tabs>
     </AuthenticatedLayout>
 </template>

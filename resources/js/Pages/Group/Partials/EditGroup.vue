@@ -6,7 +6,7 @@
     import InputLabel from '@/Components/InputLabel.vue';
     import { useForm } from "@inertiajs/vue3";
     import ColorPicker from 'primevue/colorpicker';
-    import Dropdown from 'primevue/dropdown';
+    import Select from 'primevue/select';
     import DefaultProfilePhoto from "@/Components/DefaultProfilePhoto.vue";
 
     const props = defineProps({
@@ -112,7 +112,7 @@
                     <div class="flex flex-col items-start gap-3 self-stretch md:flex-row md:justify-center md:content-start md:gap-5 md:flex-wrap">
                         <div class="flex flex-col items-start gap-1 self-stretch md:flex-1">
                             <InputLabel for="agent" :value="$t('public.agent')" :invalid="!!form.errors.agent" />
-                            <Dropdown
+                            <Select
                                 id="agent"
                                 v-model="form.agent"
                                 :options="agents"
@@ -155,7 +155,7 @@
                                         <div>{{ slotProps.option.name }}</div>
                                     </div>
                                 </template>
-                            </Dropdown>
+                            </Select>
                             <InputError :message="form.errors.agent" />
                         </div>
                         <div class="flex flex-col items-start gap-1 self-stretch md:flex-1">

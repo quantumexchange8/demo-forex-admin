@@ -8,7 +8,7 @@ import InputLabel from "@/Components/InputLabel.vue";
 import InputNumber from "primevue/inputnumber";
 import {useForm} from "@inertiajs/vue3";
 import DefaultProfilePhoto from "@/Components/DefaultProfilePhoto.vue";
-import Dropdown from "primevue/dropdown";
+import Select from "primevue/select";
 import RadioButton from "primevue/radiobutton";
 
 const visible = ref(false);
@@ -107,7 +107,7 @@ const submitForm = () => {
                                 :value="$t('public.agent')"
                                 :invalid="!!form.errors.sales_calculation_mode"
                             />
-                            <Dropdown
+                            <Select
                                 id="agent"
                                 v-model="form.agent"
                                 :options="agents"
@@ -150,7 +150,7 @@ const submitForm = () => {
                                         <div>{{ slotProps.option.name }}</div>
                                     </div>
                                 </template>
-                            </Dropdown>
+                            </Select>
                             <InputError :message="form.errors.agent" />
                         </div>
 
@@ -199,7 +199,7 @@ const submitForm = () => {
                                 :value="$t('public.sales_category')"
                                 :invalid="!!form.errors.sales_category"
                             />
-                            <Dropdown
+                            <Select
                                 v-model="selectedSalesCategory"
                                 :options="categories"
                                 :placeholder="$t('public.select_category')"
@@ -220,7 +220,7 @@ const submitForm = () => {
                                         {{ $t(`public.${slotProps.option}`) }}
                                     </div>
                                 </template>
-                            </Dropdown>
+                            </Select>
                             <InputError :message="form.errors.sales_category" />
                             <span class="text-gray-500 text-xs">{{ $t('public.sales_category_caption') }}</span>
                         </div>
@@ -272,7 +272,7 @@ const submitForm = () => {
                                 :value="$t('public.bonus_calculation_threshold') + (selectedSalesCategory === 'trade_volume' ? ' ($)' : ' (%)')"
                                 :invalid="!!form.errors.bonus_calculation_threshold"
                             />
-                            <Dropdown
+                            <Select
                                 v-model="selectedThreshold"
                                 :options="bonusCalculationThresholdOptions"
                                 :placeholder="$t('public.select_threshold')"
@@ -294,7 +294,7 @@ const submitForm = () => {
                                         {{ slotProps.option }}%
                                     </div>
                                 </template>
-                            </Dropdown>
+                            </Select>
                             <InputError :message="form.errors.bonus_calculation_threshold" />
                             <span class="text-gray-500 text-xs">{{ $t('public.bonus_calculation_threshold_caption') }}</span>
                         </div>
@@ -304,7 +304,7 @@ const submitForm = () => {
                                 :value="$t('public.bonus_calculation_period')"
                                 :invalid="!!form.errors.bonus_calculation_period"
                             />
-                            <Dropdown
+                            <Select
                                 v-model="form.bonus_calculation_period"
                                 :options="bonusCalculationPeriodOptions"
                                 :placeholder="$t('public.select_period')"
@@ -325,7 +325,7 @@ const submitForm = () => {
                                         {{ $t(`public.${slotProps.option}`) }}
                                     </div>
                                 </template>
-                            </Dropdown>
+                            </Select>
                             <InputError :message="form.errors.bonus_calculation_period" />
                         </div>
                     </div>

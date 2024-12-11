@@ -6,7 +6,7 @@ import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import InputText from 'primevue/inputtext';
 import {useForm, usePage} from '@inertiajs/vue3';
-import Dropdown from "primevue/dropdown";
+import Select from "primevue/select";
 import DefaultProfilePhoto from "@/Components/DefaultProfilePhoto.vue";
 import Password from 'primevue/password';
 import FileUpload from 'primevue/fileupload';
@@ -117,7 +117,7 @@ watchEffect(() => {
                         <div class="space-y-1 h-[66px]">
                             <InputLabel for="phone" :value="$t('public.phone_number')" />
                             <div class="flex gap-2 items-center self-stretch relative">
-                                <Dropdown
+                                <Select
                                     v-model="selectedCountry"
                                     :options="countries"
                                     filter
@@ -141,7 +141,7 @@ watchEffect(() => {
                                             <div>{{ slotProps.option.name }} <span class="text-gray-500">{{ slotProps.option.phone_code }}</span></div>
                                         </div>
                                     </template>
-                                </Dropdown>
+                                </Select>
 
                                 <InputText
                                     id="phone"
@@ -156,7 +156,7 @@ watchEffect(() => {
                         </div>
                         <div class="space-y-1 h-[66px]">
                             <InputLabel for="email" :value="$t('public.upline')" />
-                            <Dropdown
+                            <Select
                                 v-model="form.upline"
                                 :options="uplines"
                                 filter
@@ -198,7 +198,7 @@ watchEffect(() => {
                                         <div>{{ slotProps.option.name }}</div>
                                     </div>
                                 </template>
-                            </Dropdown>
+                            </Select>
                             <InputError :message="form.errors.upline" />
                         </div>
                     </div>

@@ -1,7 +1,10 @@
 <script setup>
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
-import TabPanel from "primevue/tabpanel";
-import TabView from "primevue/tabview";
+import Tabs from 'primevue/tabs';
+import TabList from 'primevue/tablist';
+import Tab from 'primevue/tab';
+import TabPanels from 'primevue/tabpanels';
+import TabPanel from 'primevue/tabpanel';
 import {h, ref, watchEffect} from "vue";
 import BillboardProfile from "@/Pages/Billboard/BillboardProfile/BillboardProfile.vue";
 import BonusWithdrawal from "@/Pages/Billboard/BonusWithdrawal/BonusWithdrawal.vue";
@@ -53,13 +56,13 @@ watchEffect(() => {
 <template>
     <AuthenticatedLayout :title="$t('public.billboard')">
         <div class="flex flex-col gap-5 md:gap-8">
-            <TabView class="flex flex-col" :activeIndex="activeIndex" @tab-change="updateType">
-                <TabPanel
-                    v-for="(tab, index) in tabs"
-                    :key="index"
-                    :header="$t(`public.${tab.title}`) + (tab.rowCount !== null ? ` (${tab.rowCount})` : '' )"
-                />
-            </TabView>
+            <Tabs class="flex flex-col" v-model:value="activeIndex" @tab-change="updateType">
+                <TabList>
+                    <Tab v-for="(tab, index) in tabs" :key="tab.title" :value="index">
+                        {{ $t(`public.${tab.title}`) + (tab.rowCount !== null ? ` (${tab.rowCount})` : '' ) }}
+                    </Tab>
+                </TabList>
+            </Tabs>
             <component
                 :is="tabs[activeIndex]?.component"
             />

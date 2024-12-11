@@ -9,7 +9,7 @@ import Badge from '@/Components/Badge.vue';
 import Vue3Autocounter from 'vue3-autocounter';
 import { ref, watch, onMounted } from 'vue';
 import { usePage } from '@inertiajs/vue3';
-import Dropdown from "primevue/dropdown";
+import Select from "primevue/select";
 import dayjs from "dayjs";
 import DashboardForum from "@/Pages/Dashboard/Partials/DashboardForum.vue";
 
@@ -225,7 +225,7 @@ const goToTransactionPage = (type) => {
                                 <vue3-autocounter ref="counter" :startAmount="0" :endAmount="netAsset" :duration="counterDuration" separator="," decimalSeparator="." :decimals="2" :autoinit="true" />
                             </div>
                         </div>
-                        <Dropdown
+                        <Select
                             v-model="selectedMonth"
                             :options="transactionMonth"
                             optionLabel="value"

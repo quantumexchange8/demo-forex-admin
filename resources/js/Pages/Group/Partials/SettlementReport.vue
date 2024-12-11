@@ -14,7 +14,7 @@ import {
 import dayjs from "dayjs";
 import MultiSelect from "primevue/multiselect";
 import IconField from "primevue/iconfield";
-import Dropdown from "primevue/dropdown";
+import Select from "primevue/select";
 
 const visible = ref(false);
 const settlementReports = ref();

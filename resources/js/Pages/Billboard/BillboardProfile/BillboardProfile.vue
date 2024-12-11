@@ -18,7 +18,7 @@ import Paginator from "primevue/paginator";
 import StatusBadge from "@/Components/StatusBadge.vue";
 import Badge from "@/Components/Badge.vue";
 import Button from "@/Components/Button.vue";
-import OverlayPanel from "primevue/overlaypanel";
+import Popover from "primevue/popover";
 import RadioButton from "primevue/radiobutton";
 import debounce from "lodash/debounce.js";
 
@@ -318,7 +318,7 @@ watchEffect(() => {
         />
     </div>
 
-    <OverlayPanel ref="op">
+    <Popover ref="op">
         <div class="w-60 flex flex-col items-center">
             <div class="flex flex-col gap-8 w-60 py-5 px-4">
                 <!-- Filter sales mode -->
@@ -366,5 +366,5 @@ watchEffect(() => {
                 </Button>
             </div>
         </div>
-    </OverlayPanel>
+    </Popover>
 </template>

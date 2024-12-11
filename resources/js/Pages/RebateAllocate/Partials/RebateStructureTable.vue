@@ -5,9 +5,9 @@ import Button from '@/Components/Button.vue';
 import {useForm, usePage} from '@inertiajs/vue3';
 import DataTable from "primevue/datatable";
 import Column from "primevue/column";
-import {FilterMatchMode} from "primevue/api";
+import {FilterMatchMode} from "@primevue/core/api";
 import Loader from "@/Components/Loader.vue";
-import Dropdown from "primevue/dropdown";
+import Select from "primevue/select";
 import {
     IconSearch,
     IconCircleXFilled,
@@ -159,7 +159,7 @@ const closeDialog = () => {
                             <IconCircleXFilled size="16"/>
                         </div>
                     </div>
-                    <Dropdown
+                    <Select
                         v-model="accountType"
                         :options="dropdownOptions"
                         optionLabel="name"

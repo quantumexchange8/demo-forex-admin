@@ -1,7 +1,10 @@
 <script setup>
 import { ref, h, watch, computed, onMounted } from "vue";
 import Button from '@/Components/Button.vue';
-import TabView from 'primevue/tabview';
+import Tabs from 'primevue/tabs';
+import TabList from 'primevue/tablist';
+import Tab from 'primevue/tab';
+import TabPanels from 'primevue/tabpanels';
 import TabPanel from 'primevue/tabpanel';
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
@@ -77,17 +80,13 @@ function updateType(event) {
 <template>
     <div class="flex flex-col items-center gap-4 flex-grow self-stretch">
         <div class="flex flex-col gap-4 items-center self-stretch lg:flex-row">
-            <TabView
-                class="flex items-center self-stretch"
-                :activeIndex="activeIndex"
-                @tab-change="updateType"
-            >
-                <TabPanel
-                    v-for="(tab, index) in tabs"
-                    :key="index"
-                    :header="$t(`public.${tab.type}`) + ` (${tab.rowCount})`"
-                />
-            </TabView>
+            <Tabs class="flex items-center self-stretch" v-model:value="activeIndex" @tab-change="updateType">
+                <TabList>
+                    <Tab v-for="(tab, index) in tabs" :key="tab.type" :value="index">
+                        {{ $t(`public.${tab.type}`) + ` (${tab.rowCount})` }}
+                    </Tab>
+                </TabList>
+            </Tabs>
         </div>
         <component
             :is="tabs[activeIndex]?.component"

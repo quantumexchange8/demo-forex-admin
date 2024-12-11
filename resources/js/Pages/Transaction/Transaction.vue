@@ -3,7 +3,10 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { CalendarIcon } from '@/Components/Icons/outline'
 import { HandIcon, CoinsIcon, RocketIcon } from '@/Components/Icons/solid';
 import { ref, h, watch, computed, onMounted } from "vue";
-import TabView from 'primevue/tabview';
+import Tabs from 'primevue/tabs';
+import TabList from 'primevue/tablist';
+import Tab from 'primevue/tab';
+import TabPanels from 'primevue/tabpanels';
 import TabPanel from 'primevue/tabpanel';
 import MultiSelect from 'primevue/multiselect';
 import IconField from 'primevue/iconfield';
@@ -68,25 +71,22 @@ const tabs = ref([
     },
 ]);
 
-const selectedType = ref('deposit');
-const activeIndex = ref(tabs.value.findIndex(tab => tab.type === selectedType.value));
+const activeIndex = ref(0);
+const selectedType = ref(tabs.value[0].type);
 
-// Watch for changes in selectedType and update the activeIndex accordingly
-watch(selectedType, (newType) => {
-    const index = tabs.value.findIndex(tab => tab.type === newType);
-    if (index >= 0) {
-        activeIndex.value = index;
+watch(activeIndex, (newIndex) => {
+    const selectedTab = tabs.value[newIndex];
+    if (selectedTab) {
+        selectedType.value = selectedTab.type;
+        // console.log('Selected type:', selectedType.value);
+
+        // This is just update for dummy values 
+        totalTransaction.value = 999;
+        totalTransactionAmount.value = 999;
+        maxAmount.value = 999;
+        counterDuration.value = 10;
     }
 });
-
-function updateType(event) {
-    const selectedTab = tabs.value[event.index];
-    selectedType.value = selectedTab.type;
-    totalTransaction.value = 999;
-    totalTransactionAmount.value = 999;
-    maxAmount.value = 999;
-    counterDuration.value = 10;
-}
 
 // data overview
 const dataOverviews = computed(() => [
@@ -144,7 +144,7 @@ const handleUpdateTotals = (data) => {
   totalTransaction.value = data.totalTransaction;
   totalTransactionAmount.value = data.totalTransactionAmount;
   maxAmount.value = data.maxAmount;
-  counterDuration.value = 1;
+  counterDuration.value = 1;    
 };
 
 </script>
@@ -153,9 +153,16 @@ const handleUpdateTotals = (data) => {
     <AuthenticatedLayout :title="$t('public.transaction')">
         <div class="flex flex-col gap-5 md:gap-8">
             <div class="flex flex-col gap-5 self-stretch md:flex-row md:justify-between md:items-center">
-                <TabView class="flex flex-col" :activeIndex="activeIndex" @tab-change="updateType">
+                <Tabs class="flex flex-col" v-model:value="activeIndex">
+                    <TabList>
+                        <Tab v-for="(tab, index) in tabs" :key="tab.title" :value="index">
+                            {{ $t(tab.title) }}
+                        </Tab>
+                    </TabList>
+                </Tabs>
+                <!-- <TabView class="flex flex-col" :activeIndex="activeIndex" @tab-change="updateType">
                     <TabPanel v-for="(tab, index) in tabs" :key="index" :header="tab.title" />
-                </TabView>
+                </TabView> -->
                 <IconField iconPosition="left" class="relative flex items-center w-full md:w-60">
                     <CalendarIcon class="z-20 w-5 h-5 text-gray-400" />
                     <MultiSelect v-model="selectedMonths" filter :options="months" :placeholder="$t('public.month_placeholder')" :maxSelectedLabels="1" :selectedItemsLabel="`${selectedMonths.length} ${$t('public.months_selected')}`" class="w-full md:w-60">

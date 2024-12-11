@@ -3,7 +3,10 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import Button from '@/Components/Button.vue';
 import { IconChevronRight } from '@tabler/icons-vue';
 import {ref, h, watchEffect} from "vue";
-import TabView from 'primevue/tabview';
+import Tabs from 'primevue/tabs';
+import TabList from 'primevue/tablist';
+import Tab from 'primevue/tab';
+import TabPanels from 'primevue/tabpanels';
 import TabPanel from 'primevue/tabpanel';
 import {usePage} from '@inertiajs/vue3';
 import MemberFinancialInfo from '@/Pages/Member/Listing/Partials/MemberFinancialInfo.vue';
@@ -94,11 +97,18 @@ const tabs = ref([
                 </div>
             </div>
 
-            <TabView class="flex flex-col gap-5">
-                <TabPanel v-for="(tab, index) in tabs" :key="index" :header="tab.title">
-                    <component :is="tab.component" />
-                </TabPanel>
-            </TabView>
+            <Tabs class="flex flex-col gap-5" :value="0">
+                <TabList>
+                    <Tab v-for="(tab, index) in tabs" :key="tab.title" :value="index">
+                        {{ $t(tab.title) }}
+                    </Tab>
+                </TabList>
+                <TabPanels>
+                    <TabPanel v-for="(tab, index) in tabs" :key="tab.component" :value="index">
+                        <component :is="tab.component" />
+                    </TabPanel>
+                </TabPanels>
+            </Tabs>
         </div>
     </AuthenticatedLayout>
 </template>

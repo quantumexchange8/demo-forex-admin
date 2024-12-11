@@ -7,7 +7,7 @@ import InputSwitch from "primevue/inputswitch";
 import { ref, watch } from "vue";
 import Dialog from "primevue/dialog";
 import InputLabel from "@/Components/InputLabel.vue";
-import Dropdown from "primevue/dropdown";
+import Select from "primevue/select";
 import InputError from "@/Components/InputError.vue";
 import InputText from "primevue/inputtext";
 import { useForm } from "@inertiajs/vue3";
@@ -328,7 +328,7 @@ const handleMemberStatus = () => {
                 <div class="flex flex-col gap-1 items-start self-stretch">
                     <InputLabel for="phone" :value="$t('public.phone_number')" />
                     <div class="flex gap-2 items-center self-stretch relative">
-                        <Dropdown
+                        <Select
                             v-model="selectedCountry"
                             :options="countries"
                             filter
@@ -352,7 +352,7 @@ const handleMemberStatus = () => {
                                     <div>{{ slotProps.option.name }} <span class="text-gray-500">{{ slotProps.option.phone_code }}</span></div>
                                 </div>
                             </template>
-                        </Dropdown>
+                        </Select>
 
                         <InputText
                             id="phone"

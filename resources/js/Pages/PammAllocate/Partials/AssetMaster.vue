@@ -18,9 +18,9 @@ import {
 import InputText from 'primevue/inputtext';
 import Button from '@/Components/Button.vue';
 import Badge from '@/Components/Badge.vue';
-import Dropdown from "primevue/dropdown";
+import Select from "primevue/select";
 import Action from "@/Pages/PammAllocate/Partials/Action.vue";
-import OverlayPanel from 'primevue/overlaypanel';
+import Popover from 'primevue/popover';
 import { NoAssetMasterIcon } from '@/Components/Icons/solid';
 import Empty from '@/Components/Empty.vue';
 import MultiSelect from 'primevue/multiselect';
@@ -261,7 +261,7 @@ const saveLikesDebounced = debounce((masterId) => {
                     {{ filterCount }}
                 </Badge>
             </Button>
-            <Dropdown
+            <Select
                 v-model="sortType"
                 :options="sortOptions"
                 optionLabel="name"
@@ -278,7 +278,7 @@ const saveLikesDebounced = debounce((masterId) => {
                 <template #option="slotProps">
                     {{ $t('public.' + slotProps.option.name) }}
                 </template>
-            </Dropdown>
+            </Select>
         </div>
     </div>
 
@@ -438,7 +438,7 @@ const saveLikesDebounced = debounce((masterId) => {
         </div>
     </div>
 
-    <OverlayPanel ref="op">
+    <Popover ref="op">
         <div class="w-60 flex flex-col items-center">
             <div class="flex flex-col gap-8 w-60 py-5 px-4">
                 <!-- Filter Visible To -->
@@ -484,7 +484,7 @@ const saveLikesDebounced = debounce((masterId) => {
                 <!-- Filter Admin User’s Access -->
                 <div class="flex flex-col items-center gap-2 self-stretch">
                     <span class="self-stretch text-gray-950 text-xs font-bold">{{ $t('public.filter_admin_access') }}</span>
-                    <Dropdown
+                    <Select
                         v-model="adminUser"
                         filter
                         :filterFields="['name']"
@@ -506,7 +506,7 @@ const saveLikesDebounced = debounce((masterId) => {
                                 <div>{{ slotProps.option.name }}</div>
                             </div>
                         </template>
-                    </Dropdown>
+                    </Select>
                 </div>
                 <!-- Filter Tags -->
                 <div class="flex flex-col items-center gap-2 self-stretch">
@@ -553,5 +553,5 @@ const saveLikesDebounced = debounce((masterId) => {
                 </Button>
             </div>
         </div>
-    </OverlayPanel>
+    </Popover>
 </template>

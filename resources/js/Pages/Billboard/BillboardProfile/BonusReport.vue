@@ -1,6 +1,9 @@
 <script setup>
 import { ref, h, watch } from "vue";
-import TabView from 'primevue/tabview';
+import Tabs from 'primevue/tabs';
+import TabList from 'primevue/tablist';
+import Tab from 'primevue/tab';
+import TabPanels from 'primevue/tabpanels';
 import TabPanel from 'primevue/tabpanel';
 import BonusPayout from "@/Pages/Billboard/BillboardProfile/BonusPayout.vue";
 import BonusWithdrawalReport from "@/Pages/Billboard/BillboardProfile/BonusWithdrawalReport.vue";
@@ -41,17 +44,13 @@ function updateType(event) {
 <template>
     <div class="flex flex-col items-center gap-4 flex-grow self-stretch">
         <div class="flex flex-col gap-4 items-center self-stretch lg:flex-row">
-            <TabView
-                class="flex items-center self-stretch"
-                :activeIndex="activeIndex"
-                @tab-change="updateType"
-            >
-                <TabPanel
-                    v-for="(tab, index) in tabs"
-                    :key="index"
-                    :header="$t(`public.${tab.type}`)"
-                />
-            </TabView>
+            <Tabs class="flex items-center self-stretch" v-model:value="activeIndex" @tab-change="updateType">
+                <TabList>
+                    <Tab v-for="(tab, index) in tabs" :key="tab.type" :value="index">
+                        {{ $t(`public.${tab.type}`) }}
+                    </Tab>
+                </TabList>
+            </Tabs>
         </div>
         <component
             :is="tabs[activeIndex]?.component"

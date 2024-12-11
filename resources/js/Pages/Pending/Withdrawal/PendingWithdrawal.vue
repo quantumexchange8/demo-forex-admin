@@ -8,7 +8,7 @@ import Button from "@/Components/Button.vue";
 import DefaultProfilePhoto from "@/Components/DefaultProfilePhoto.vue";
 import {ref, watchEffect} from "vue";
 import {wTrans} from "laravel-vue-i18n";
-import {FilterMatchMode} from "primevue/api";
+import {FilterMatchMode} from "@primevue/core/api";
 import {useForm, usePage} from "@inertiajs/vue3";
 import dayjs from 'dayjs'
 import {transactionFormat} from "@/Composables/index.js";

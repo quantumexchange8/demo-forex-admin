@@ -4,7 +4,7 @@ import InputLabel from '@/Components/InputLabel.vue';
 import Passord from 'primevue/password';
 import { useForm } from "@inertiajs/vue3";
 import Button from "@/Components/Button.vue";
-import Dropdown from "primevue/dropdown";
+import Select from "primevue/select";
 import { h, ref, watch } from "vue";
 import { router } from "@inertiajs/vue3";
 import { useConfirm } from "primevue/useconfirm";
@@ -114,7 +114,7 @@ const requireConfirmation = (action_type) => {
                 <span class="self-stretch text-gray-950 text-sm font-bold">{{ $t('public.select_new_upline') }}</span>
                 <div class="flex flex-col items-start gap-2 self-stretch">
                     <InputLabel for="upline" :value="$t('public.upline')" />
-                    <Dropdown
+                    <Select
                         v-model="upline"
                         :options="uplines"
                         filter
@@ -154,7 +154,7 @@ const requireConfirmation = (action_type) => {
                                 <div>{{ slotProps.option.name }}</div>
                             </div>
                         </template>
-                    </Dropdown>
+                    </Select>
                     <InputError :message="form.errors.upline_id" />
                 </div>
             </div>

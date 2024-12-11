@@ -2,7 +2,7 @@
 import Button from '@/Components/Button.vue';
 import { IconAdjustmentsHorizontal } from '@tabler/icons-vue';
 import Dialog from 'primevue/dialog';
-import Dropdown from 'primevue/dropdown';
+import Select from 'primevue/select';
 import { onMounted, ref, watch } from 'vue';
 import InputText from 'primevue/inputtext';
 import InputError from '@/Components/InputError.vue';
@@ -152,7 +152,7 @@ const openSettingDialog = () => {
                             </div>
                             <div class="flex flex-col items-start gap-1 flex-1">
                                 <InputLabel for="category" :value="$t('public.category')" :invalid="!!form.errors.category" />
-                                <Dropdown
+                                <Select
                                     v-model="account_type.category"
                                     id="category"
                                     :options="categories"
@@ -203,7 +203,7 @@ const openSettingDialog = () => {
                     <div class="flex justify-center items-start content-start gap-5 self-stretch flex-wrap flex-col md:flex-row">
                         <div class="w-full flex flex-col items-start gap-1 flex-1">
                             <InputLabel for="leverage" :value="$t('public.leverage')" :invalid="!!form.errors.leverage" />
-                            <Dropdown
+                            <Select
                                 v-model="account_type.leverage"
                                 id="category"
                                 :options="leverages"
@@ -216,7 +216,7 @@ const openSettingDialog = () => {
                         </div>
                         <div class="w-full flex flex-col items-start gap-1 flex-1">
                             <InputLabel for="trade_delay_duration" :value="$t('public.trade_delay_duration')" :invalid="!!form.errors.trade_delay_duration" />
-                            <Dropdown
+                            <Select
                                 v-model="account_type.trade_open_duration"
                                 id="trade_delay_duration"
                                 :options="trade_delay_duration_dropdown"

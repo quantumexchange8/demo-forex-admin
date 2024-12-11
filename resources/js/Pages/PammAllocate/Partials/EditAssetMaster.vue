@@ -5,9 +5,9 @@ import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import InputText from 'primevue/inputtext';
 import { useForm, usePage } from '@inertiajs/vue3';
-import Dropdown from "primevue/dropdown";
+import Select from "primevue/select";
 import { IconPlus, IconX, IconRefresh } from '@tabler/icons-vue';
-import Calendar from 'primevue/calendar';
+import DatePicker from 'primevue/datepicker';
 import MultiSelect from 'primevue/multiselect';
 import IconField from 'primevue/iconfield';
 import FileUpload from 'primevue/fileupload';
@@ -192,7 +192,7 @@ const removeMasterProfilePhoto = () => {
                     <div class="flex flex-col items-start gap-1 self-stretch">
                         <InputLabel for="started_at" :value="$t('public.created_date')" />
                         <div class="relative w-full">
-                            <Calendar
+                            <DatePicker
                                 v-model="form.started_at"
                                 selectionMode="single"
                                 :manualInput="false"
@@ -352,7 +352,7 @@ const removeMasterProfilePhoto = () => {
                     </div>
                     <div class="flex flex-col items-start gap-1 self-stretch md:flex-grow">
                         <InputLabel for="min_investment_period" :value="$t('public.min_investment_period')" />
-                        <Dropdown
+                        <Select
                             v-model="form.min_investment_period"
                             :options="investmentPeriodOptions"
                             optionLabel="name"

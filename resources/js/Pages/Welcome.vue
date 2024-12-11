@@ -5,9 +5,9 @@ import InputText from 'primevue/inputtext';
 import Column from 'primevue/column';
 import Button from '@/Components/Button.vue';
 import { ref, onMounted } from 'vue';
-import { FilterMatchMode } from 'primevue/api';
+import { FilterMatchMode } from '@primevue/core/api';
 import DefaultProfilePhoto from "@/Components/DefaultProfilePhoto.vue";
-import Dropdown from "primevue/dropdown";
+import Select from "primevue/select";
 
 onMounted(() => {
     getResults();
@@ -47,13 +47,13 @@ const selectedCity = ref();
     <AuthenticatedLayout title="Component">
         <div class="p-6 flex flex-col items-center justify-center self-stretch gap-6 border border-gray-200 bg-white shadow-table rounded-2xl">
             <div>
-                <Dropdown v-model="selectedCity" editable :options="countries" optionLabel="name" optionValue="phone_code" placeholder="Select a City" class="w-full md:w-[14rem]">
+                <Select v-model="selectedCity" editable :options="countries" optionLabel="name" optionValue="phone_code" placeholder="Select a City" class="w-full md:w-[14rem]">
                     <template #option="slotProps">
                         <div class="flex items-center">
                             <div>{{ slotProps.option.name }} <span class="text-gray-500">{{ slotProps.option.phone_code }}</span></div>
                         </div>
                     </template>
-                </Dropdown>
+                </Select>
             </div>
             <DataTable
                 v-model:filters="filters"

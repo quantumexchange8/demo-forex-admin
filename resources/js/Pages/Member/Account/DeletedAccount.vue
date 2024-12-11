@@ -2,7 +2,7 @@
 import DataTable from "primevue/datatable";
 import Column from "primevue/column";
 import {ref, watch, watchEffect} from "vue";
-import {FilterMatchMode} from "primevue/api";
+import {FilterMatchMode} from "@primevue/core/api";
 import Loader from "@/Components/Loader.vue";
 import DefaultProfilePhoto from "@/Components/DefaultProfilePhoto.vue";
 import Empty from "@/Components/Empty.vue";
@@ -13,7 +13,7 @@ import {IconCircleXFilled, IconSearch, IconX} from "@tabler/icons-vue";
 import {transactionFormat} from "@/Composables/index.js";
 import Dialog from "primevue/dialog";
 import {usePage} from "@inertiajs/vue3";
-import Calendar from "primevue/calendar";
+import DatePicker from "primevue/datepicker";
 
 const accounts = ref([]);
 const loading = ref(false);
@@ -128,7 +128,7 @@ watchEffect(() => {
                 </div>
                 <div class="grid grid-cols-2 w-full gap-3">
                     <div class="relative w-full md:w-[272px]">
-                        <Calendar
+                        <DatePicker
                             v-model="selectedDate"
                             selectionMode="range"
                             :manualInput="false"

@@ -7,7 +7,6 @@ import badgedirective from './badgedirective';
 import blockui from './blockui';
 import breadcrumb from './breadcrumb';
 import button from './button';
-import calendar from './calendar';
 import card from './card';
 import carousel from './carousel';
 import cascadeselect from './cascadeselect';
@@ -16,6 +15,7 @@ import chip from './chip';
 import chips from './chips';
 import colorpicker from './colorpicker';
 import confirmpopup from './confirmpopup';
+import datepicker from './datepicker';
 import contextmenu from './contextmenu';
 import datatable from './datatable';
 import dataview from './dataview';
@@ -24,7 +24,7 @@ import deferred from './deferred';
 import dialog from './dialog';
 import divider from './divider';
 import dock from './dock';
-import dropdown from './dropdown';
+import select from './select';
 import fieldset from './fieldset';
 import fileupload from './fileupload';
 import floatlabel from './floatlabel';
@@ -51,12 +51,12 @@ import metergroup from './metergroup';
 import multiselect from './multiselect';
 import orderlist from './orderlist';
 import organizationchart from './organizationchart';
-import overlaypanel from './overlaypanel';
 import paginator from './paginator';
 import panel from './panel';
 import panelmenu from './panelmenu';
 import password from './password';
 import picklist from './picklist';
+import popover from './popover';
 import progressbar from './progressbar';
 import progressspinner from './progressspinner';
 import radiobutton from './radiobutton';
@@ -74,8 +74,11 @@ import splitter from './splitter';
 import splitterpanel from './splitterpanel';
 import stepper from './stepper';
 import steps from './steps';
-import tabmenu from './tabmenu';
-import tabview from './tabview';
+import tabs from './tabs';
+import tablist from './tablist';
+import tabpanels from './tabpanels';
+import tabpanel from './tabpanel';
+import tab from './tab';
 import tag from './tag';
 import terminal from './terminal';
 import textarea from './textarea';
@@ -100,11 +103,11 @@ export default {
 
     //forms
     autocomplete,
-    dropdown,
+    select,
     inputnumber,
     inputtext,
-    calendar,
     checkbox,
+    datepicker,
     radiobutton,
     inputswitch,
     selectbutton,
@@ -150,7 +153,11 @@ export default {
     panel,
     fieldset,
     card,
-    tabview,
+    tabs,
+    tablist,
+    tabpanels,
+    tabpanel,
+    tab,
     divider,
     toolbar,
     scrollpanel,
@@ -172,13 +179,12 @@ export default {
     panelmenu,
     megamenu,
     dock,
-    tabmenu,
 
     //overlays
     dialog,
-    overlaypanel,
     sidebar,
     confirmpopup,
+    popover,
 
     //messages
     message,

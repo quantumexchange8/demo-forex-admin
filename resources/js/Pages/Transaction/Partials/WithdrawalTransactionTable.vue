@@ -5,12 +5,12 @@ import Button from '@/Components/Button.vue';
 import StatusBadge from '@/Components/StatusBadge.vue';
 import { ref, onMounted, watch, watchEffect, computed } from "vue";
 import {usePage} from '@inertiajs/vue3';
-import OverlayPanel from 'primevue/overlaypanel';
+import Popover from 'primevue/popover';
 import Dialog from 'primevue/dialog';
 import DataTable from "primevue/datatable";
 import Column from "primevue/column";
 import DefaultProfilePhoto from "@/Components/DefaultProfilePhoto.vue";
-import {FilterMatchMode} from "primevue/api";
+import {FilterMatchMode} from "@primevue/core/api";
 import { transactionFormat } from '@/Composables/index.js';
 import Empty from '@/Components/Empty.vue';
 import Loader from "@/Components/Loader.vue";
@@ -366,7 +366,7 @@ const handleFilter = (e) => {
         </template>
     </DataTable>
 
-    <OverlayPanel ref="op">
+    <Popover ref="op">
         <div class="flex flex-col gap-8 w-60 py-5 px-4">
             <!-- Filter Role-->
             <div class="flex flex-col gap-2 items-center self-stretch">
@@ -446,7 +446,7 @@ const handleFilter = (e) => {
                 </Button>
             </div>
         </div>
-    </OverlayPanel>
+    </Popover>
 
     <Dialog v-model:visible="visible" modal :header="$t('public.withdrawal_details')" class="dialog-xs md:dialog-md">
         <div class="flex flex-col justify-center items-start pb-4 gap-3 self-stretch border-b border-gray-200 md:flex-row md:pt-4 md:justify-between">

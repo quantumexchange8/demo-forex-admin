@@ -7,7 +7,7 @@ import InputError from "@/Components/InputError.vue";
 import InputNumber from "primevue/inputnumber";
 import {useForm} from "@inertiajs/vue3";
 import Button from "@/Components/Button.vue";
-import Dropdown from "primevue/dropdown";
+import Select from "primevue/select";
 
 const props = defineProps({
     member: Object
@@ -176,7 +176,7 @@ const closeDialog = () => {
         >
             <!-- account type -->
             <div class="flex flex-col items-start gap-1">
-                <Dropdown
+                <Select
                     v-model="selectedAccountType"
                     id="accountTypes"
                     :options="accountTypes"

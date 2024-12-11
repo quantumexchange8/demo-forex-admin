@@ -2,16 +2,17 @@ export default {
     root: ({ props, context, parent }) => ({
         class: [
             // Font
-            'caret-primary-500 text-sm',
+            'caret-gray-500 text-sm',
 
             // Flex
             { 'flex-1 w-[1%]': parent.instance.$name == 'InputGroup' },
 
             // Spacing
             'm-0',
+            'w-full',
             {
                 'py-3 px-3.5': props.size == 'large',
-                'py-2 px-4': props.size == 'small',
+                'py-1.5 px-2': props.size == 'small',
                 'py-3 px-4': props.size == null
             },
 
@@ -35,7 +36,7 @@ export default {
             {
                 'hover:border-gray-500': !context.disabled && !props.invalid,
                 'focus:outline-none focus:ring-0 focus:border-primary-500': !context.disabled,
-                'bg-gray-50 text-gray-300 placeholder:text-gray-300 select-none pointer-events-none cursor-default': context.disabled
+                'bg-gray-50 text-gray-300 disabled:bg-gray-100 disabled:text-gray-400 placeholder:text-gray-300 select-none disabled:cursor-not-allowed': context.disabled
             },
 
             // Filled State *for FloatLabel

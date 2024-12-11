@@ -233,7 +233,7 @@ const handleMemberStatus = () => {
             />
         </template>
     </Dialog>
-<!--    <OverlayPanel ref="op">-->
+<!--    <Popover ref="op">-->
 <!--        <div class="py-2 flex flex-col items-center">-->
 <!--            <Link :href="route('member.detail', member.id_number)" class="p-3 flex items-center gap-3 self-stretch hover:bg-gray-100 hover:cursor-pointer">-->
 <!--                <IconId size="20" stroke-width="1.25" color="#667085" />-->
@@ -245,5 +245,5 @@ const handleMemberStatus = () => {
 <!--                :member="member"-->
 <!--            />-->
 <!--        </div>-->
-<!--    </OverlayPanel>-->
+<!--    </Popover>-->
 </template>

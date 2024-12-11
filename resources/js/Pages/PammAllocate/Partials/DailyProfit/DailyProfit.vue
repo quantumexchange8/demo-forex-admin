@@ -1,6 +1,9 @@
 <script setup>
 import { ref, h, watch } from "vue";
-import TabView from 'primevue/tabview';
+import Tabs from 'primevue/tabs';
+import TabList from 'primevue/tablist';
+import Tab from 'primevue/tab';
+import TabPanels from 'primevue/tabpanels';
 import TabPanel from 'primevue/tabpanel';
 import { wTrans } from "laravel-vue-i18n";
 import DailyProfitAllocation from "@/Pages/PammAllocate/Partials/DailyProfit/DailyProfitAllocation.vue";
@@ -49,9 +52,13 @@ function updateType(event) {
 
 <template>
     <div class="flex flex-col items-center gap-5 flex-grow self-stretch">
-        <TabView class="flex items-center self-stretch" :activeIndex="activeIndex" @tab-change="updateType">
-            <TabPanel v-for="(tab, index) in tabs" :key="index" :header="tab.title" />
-        </TabView>
+        <Tabs class="flex items-start self-stretch" v-model:value="activeIndex" @tab-change="updateType">
+            <TabList>
+                <Tab v-for="(tab, index) in tabs" :key="tab.title" :value="index">
+                    {{ $t(tab.title) }}
+                </Tab>
+            </TabList>
+        </Tabs>
         <component
             :is="tabs[activeIndex]?.component"
             :master="props.master"

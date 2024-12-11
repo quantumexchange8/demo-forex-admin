@@ -14,10 +14,10 @@ import AddAssetMaster from '@/Pages/PammAllocate/Partials/AddAssetMaster.vue';
 import InputText from 'primevue/inputtext';
 import Button from '@/Components/Button.vue';
 import Badge from '@/Components/Badge.vue';
-import Dropdown from "primevue/dropdown";
+import Select from "primevue/select";
 import Action from "@/Pages/PammAllocate/Partials/Action.vue";
-import OverlayPanel from 'primevue/overlaypanel';
-import Calendar from 'primevue/calendar';
+import Popover from 'primevue/popover';
+import DatePicker from 'primevue/datepicker';
 import AssetMaster from '@/Pages/PammAllocate/Partials/AssetMaster.vue';
 import dayjs from "dayjs";
 
@@ -231,7 +231,7 @@ watchEffect(() => {
                             <div class="w-full h-full flex justify-center items-center relative">
                                 <span class="text-gray-950 text-center text-sm select-none cursor-pointer font-semibold" @click="toggleCalendar">{{ formatMonthDate(selectedDate) }}</span>
                                 <div class="absolute top-10 z-20">
-                                    <Calendar
+                                    <DatePicker
                                         v-if="isCalendarVisible"
                                         v-model="selectedDate"
                                         selectionMode="single"
@@ -241,7 +241,7 @@ watchEffect(() => {
                                         class="w-full"
                                         inline
                                     >
-                                    </Calendar>
+                                    </DatePicker>
                                 </div>
                             </div>
                             <Button

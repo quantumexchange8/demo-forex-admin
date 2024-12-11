@@ -17,11 +17,11 @@ export default {
             'shadow-input',
 
             // Conditional classes based on state
-            'hover:bg-gray-50 select-none cursor-pointer',
+            'hover:bg-gray-50',
         ]
     },
     label: {
-        class: 'text-center text-xs'
+        class: 'text-gray-950 text-center text-xs'
     },
     icon: {
         class: 'leading-6 mr-2'

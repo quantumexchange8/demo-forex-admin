@@ -7,7 +7,7 @@ import {
 } from '@tabler/icons-vue';
 import ProfilePhoto from "@/Components/ProfilePhoto.vue";
 import {Link, usePage} from "@inertiajs/vue3";
-import OverlayPanel from "primevue/overlaypanel";
+import Popover from "primevue/popover";
 import {ref} from "vue";
 import {loadLanguageAsync} from "laravel-vue-i18n";
 
@@ -79,7 +79,7 @@ const changeLanguage = async (langVal) => {
         </div>
     </nav>
 
-    <OverlayPanel ref="op">
+    <Popover ref="op">
         <div class="py-2 flex flex-col items-center w-[120px]">
             <div
                 v-for="locale in locales"
@@ -90,5 +90,5 @@ const changeLanguage = async (langVal) => {
                 {{ locale.label }}
             </div>
         </div>
-    </OverlayPanel>
+    </Popover>
 </template>

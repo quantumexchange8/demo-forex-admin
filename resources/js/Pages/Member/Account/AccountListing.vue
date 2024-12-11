@@ -1,6 +1,9 @@
 <script setup>
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
-import TabView from 'primevue/tabview';
+import Tabs from 'primevue/tabs';
+import TabList from 'primevue/tablist';
+import Tab from 'primevue/tab';
+import TabPanels from 'primevue/tabpanels';
 import TabPanel from 'primevue/tabpanel';
 import {h, ref, watch} from "vue";
 import AllAccount from "@/Pages/Member/Account/AllAccount.vue";
@@ -66,19 +69,18 @@ const refreshAll = () => {
                 </div>
             </div>
             <div class="py-6 px-4 md:p-6 flex flex-col items-center self-stretch border border-gray-200 bg-white shadow-table rounded-2xl">
-                <TabView
-                    class="flex flex-col w-full gap-6"
-                    :activeIndex="activeIndex"
-                    @tab-change="updateType"
-                >
-                    <TabPanel
-                        v-for="(tab, index) in tabs"
-                        :key="index"
-                        :header="$t(`public.${tab.title}`)"
-                    >
-                        <component :is="tabs[activeIndex]?.component" />
-                    </TabPanel>
-                </TabView>
+                <Tabs class="flex flex-col w-full gap-6" v-model:value="activeIndex" @tab-change="updateType">
+                    <TabList>
+                        <Tab v-for="(tab, index) in tabs" :key="tab.title" :value="index">
+                            {{ $t(`public.${tab.title}`) }}
+                        </Tab>
+                    </TabList>
+                    <TabPanels>
+                        <TabPanel v-for="(tab, index) in tabs" :key="tab.component" :value="index">
+                            <component :is="tabs[activeIndex]?.component" />
+                        </TabPanel>
+                    </TabPanels>
+                </Tabs>
             </div>
         </div>
     </AuthenticatedLayout>

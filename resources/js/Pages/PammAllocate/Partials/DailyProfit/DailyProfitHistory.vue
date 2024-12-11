@@ -3,7 +3,7 @@
 import { ref, h, watch, computed, onMounted } from "vue";
 import Button from '@/Components/Button.vue';
 import { useForm, usePage } from '@inertiajs/vue3';
-import Dropdown from "primevue/dropdown";
+import Select from "primevue/select";
 import dayjs from "dayjs";
 import DailyProfitChart from "@/Pages/PammAllocate/Partials/DailyProfit/DailyProfitChart.vue";
 
@@ -33,7 +33,7 @@ selectedMonth.value = dayjs().format('MM/YYYY');
             <span class="h-10 flex flex-col justify-center self-stretch text-gray-950 text-sm font-bold">{{ $t('public.generated_monthly_gain') }}</span>
             <div class="flex items-center gap-5 self-stretch">
                 <span class="flex-grow text-gray-950 text-xl font-semibold">{{ generatedMonthlyGain }}%</span>
-                <Dropdown
+                <Select
                     v-model="selectedMonth"
                     :options="historyPeriodOptions"
                     optionLabel="value"
@@ -46,7 +46,7 @@ selectedMonth.value = dayjs().format('MM/YYYY');
         <div class="hidden md:flex flex-col items-start self-stretch">
             <div class="flex justify-between items-center self-stretch">
                 <span class="text-gray-950 text-sm font-bold">{{ $t('public.generated_monthly_gain') }}</span>
-                <Dropdown
+                <Select
                     v-model="selectedMonth"
                     :options="historyPeriodOptions"
                     optionLabel="value"
