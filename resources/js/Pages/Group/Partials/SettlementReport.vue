@@ -13,6 +13,7 @@ import {
 } from "@tabler/icons-vue";
 import dayjs from "dayjs";
 import MultiSelect from "primevue/multiselect";
+import InputIcon from "primevue/inputicon";
 import IconField from "primevue/iconfield";
 import Select from "primevue/select";
 
@@ -107,16 +108,16 @@ const collapseAll = () => {
                 <div class="flex flex-col gap-5 items-center self-stretch mb-5">
                     <div class="flex flex-col gap-3 md:flex-row md:justify-between items-center self-stretch">
                         <div class="flex flex-col md:flex-row gap-3 items-center w-full">
-                            <IconField iconPosition="left" class="relative flex items-center w-full md:w-60">
-                                <CalendarIcon class="z-20 w-5 h-5 text-gray-400" />
-                                <MultiSelect
-                                    v-model="selectedMonths"
-                                    filter
-                                    :options="months"
-                                    :placeholder="$t('public.month_placeholder')"
-                                    :maxSelectedLabels="1"
-                                    :selectedItemsLabel="`${selectedMonths.length} ${$t('public.months_selected')}`"
-                                    class="w-full md:w-60 font-normal"
+                            <IconField class="w-full md:w-60">
+                                <InputIcon class="z-20">                  
+                                    <CalendarIcon class="w-5 h-5 text-gray-400" />
+                                </InputIcon>
+                                <MultiSelect v-model="selectedMonths" filter :options="months" :placeholder="$t('public.month_placeholder')" 
+                                    :maxSelectedLabels="1" :selectedItemsLabel="`${selectedMonths.length} ${$t('public.months_selected')}`" class="w-full md:w-60 font-normal"
+                                    :pt="{ 
+                                        pcFilter:{root: 'hidden'},
+                                        pcFilterContainer:{root: 'w-full relative leading-none text-sm'},
+                                    }"
                                 >
                                     <template #filtericon>{{ $t('public.select_all') }}</template>
                                 </MultiSelect>

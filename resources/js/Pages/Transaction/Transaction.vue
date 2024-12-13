@@ -9,6 +9,8 @@ import Tab from 'primevue/tab';
 import TabPanels from 'primevue/tabpanels';
 import TabPanel from 'primevue/tabpanel';
 import MultiSelect from 'primevue/multiselect';
+import InputText from 'primevue/inputtext';
+import InputIcon from 'primevue/inputicon';
 import IconField from 'primevue/iconfield';
 import Vue3Autocounter from 'vue3-autocounter';
 import DepositTransactionTable from "@/Pages/Transaction/Partials/DepositTransactionTable.vue";
@@ -160,16 +162,20 @@ const handleUpdateTotals = (data) => {
                         </Tab>
                     </TabList>
                 </Tabs>
-                <!-- <TabView class="flex flex-col" :activeIndex="activeIndex" @tab-change="updateType">
-                    <TabPanel v-for="(tab, index) in tabs" :key="index" :header="tab.title" />
-                </TabView> -->
-                <IconField iconPosition="left" class="relative flex items-center w-full md:w-60">
-                    <CalendarIcon class="z-20 w-5 h-5 text-gray-400" />
-                    <MultiSelect v-model="selectedMonths" filter :options="months" :placeholder="$t('public.month_placeholder')" :maxSelectedLabels="1" :selectedItemsLabel="`${selectedMonths.length} ${$t('public.months_selected')}`" class="w-full md:w-60">
+                <IconField class="w-full md:w-60">
+                    <InputIcon class="z-20">                  
+                        <CalendarIcon class="w-5 h-5 text-gray-400" />
+                    </InputIcon>
+                    <MultiSelect v-model="selectedMonths" filter :options="months" :placeholder="$t('public.month_placeholder')" 
+                        :maxSelectedLabels="1" :selectedItemsLabel="`${selectedMonths.length} ${$t('public.months_selected')}`" class="w-full md:w-60"
+                        :pt="{ 
+                            pcFilter:{root: 'hidden'},
+                            pcFilterContainer:{root: 'w-full relative leading-none text-sm'},
+                        }"
+                    >
                         <template #filtericon>{{ $t('public.select_all') }}</template>
                     </MultiSelect>
                 </IconField>
-
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 w-full gap-5">
                 <div

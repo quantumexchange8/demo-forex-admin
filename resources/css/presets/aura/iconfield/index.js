@@ -5,7 +5,7 @@ export default {
 
             '[&>[data-pc-name=inputicon]]:absolute',
             '[&>[data-pc-name=inputicon]]:top-1/2',
-            '[&>[data-pc-name=inputicon]]:-mt-3',
+            '[&>[data-pc-name=inputicon]]:-mt-2.5',
             '[&>[data-pc-name=inputicon]]:text-gray-950/60',
 
             '[&>[data-pc-name=inputicon]:first-child]:left-3',
@@ -21,7 +21,12 @@ export default {
             '[&>[data-pc-extend=inputicon]]:text-gray-950/60',
 
             '[&>[data-pc-extend=inputicon]:first-child]:left-3',
-            '[&>[data-pc-extend=inputicon]:last-child]:right-3'
+            '[&>[data-pc-extend=inputicon]:last-child]:right-3',
+
+            // Example of addition
+            '[&>[data-pc-name=multiselect]:first-child]:pr-10',
+            '[&>[data-pc-name=multiselect]:last-child]:pl-10',
         ]
     }
 };
+

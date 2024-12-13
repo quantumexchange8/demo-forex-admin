@@ -102,7 +102,7 @@ const clearDate = () => {
                             />
                             <div
                                 v-if="selectedDate && selectedDate.length > 0"
-                                class="absolute top-2/4 -mt-2.5 right-4 text-gray-400 select-none cursor-pointer bg-white"
+                                class="absolute top-1/2 -mt-3 right-3 flex justify-center w-6 h-6 text-gray-400 select-none cursor-pointer bg-white"
                                 @click="clearDate"
                             >
                                 <IconX size="20" />

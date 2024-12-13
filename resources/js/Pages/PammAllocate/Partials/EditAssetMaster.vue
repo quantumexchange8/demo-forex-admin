@@ -205,7 +205,7 @@ const removeMasterProfilePhoto = () => {
                             />
                             <div
                                 v-if="form.started_at"
-                                class="absolute top-2/4 -mt-2.5 right-4 text-gray-400 select-none cursor-pointer bg-white"
+                                class="absolute top-1/2 -mt-2.5 right-3 flex justify-center w-6 h-6 text-gray-400 select-none cursor-pointer bg-white"
                                 @click="clearDate"
                             >
                                 <IconX size="20" stroke-width="1.25" />
@@ -247,7 +247,7 @@ const removeMasterProfilePhoto = () => {
                                         @click="togglePublicSelection"
                                     >
                                         <Checkbox v-model="checked" :binary="true" />
-                                        <span class="text-gray-950">{{ $t('public.public') }}</span>
+                                        <span class="text-gray-950 text-sm">{{ $t('public.public') }}</span>
                                     </div>
                                 </div>
                             </template>

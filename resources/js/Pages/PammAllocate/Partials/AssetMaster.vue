@@ -475,7 +475,7 @@ const saveLikesDebounced = debounce((masterId) => {
                                     @click="togglePublicSelection"
                                 >
                                     <Checkbox v-model="checked" :binary="true" />
-                                    <span class="text-gray-950">{{ $t('public.public') }}</span>
+                                    <span class="text-gray-950 text-sm">{{ $t('public.public') }}</span>
                                 </div>
                             </div>
                         </template>

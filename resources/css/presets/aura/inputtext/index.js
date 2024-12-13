@@ -44,7 +44,7 @@ export default {
 
             // Misc
             'appearance-none shadow-input',
-            'transition-colors duration-200'
+            'transition-colors duration-200',
         ]
     })
 };
