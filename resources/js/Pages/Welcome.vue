@@ -14,7 +14,7 @@ onMounted(() => {
 })
 const getResults = async (langVal) => {
     try {
-        const response = await axios.get('http://mosanes-admin.test/getData');
+        const response = await axios.get('http://currenttech-admin.test/getData');
         customers.value = response.data.users;
         countries.value = response.data.countries;
 

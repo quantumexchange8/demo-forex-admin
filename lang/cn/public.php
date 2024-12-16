@@ -22,7 +22,7 @@ return [
     "group" => "组织详情",
     "transaction" => "帐目历史",
     "account_type" => "账户类别",
-    "greeting" => "欢迎回来, 摩西管理员!",
+    "greeting" => "欢迎回来, 管理员!",
     "greeting_caption" => "准备好广大您的交易社区了吗? 让我们开始吧!",
     "account_balance_equity" => "所有交易账户内余额与净值",
     "balance" => "总余额",

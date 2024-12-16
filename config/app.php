@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Mosanes Admin'),
+    'name' => env('APP_NAME', 'Current Tech Admin'),
 
     /*
     |--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
-    'member_production_url' => env('MEMBER_PRODUCTION_URL', 'https://user.mosanes.com'),
+    'member_production_url' => env('MEMBER_PRODUCTION_URL', 'https://user.currenttech.com'),
 
     /*
     |--------------------------------------------------------------------------

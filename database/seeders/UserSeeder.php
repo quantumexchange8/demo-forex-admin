@@ -12,7 +12,7 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         User::create([
-            'name' => 'Mosanes Admin',
+            'name' => 'Current Tech Admin',
             'email' => 'admin@admin.com',
             'email_verified_at' => now(),
             'password' =>  Hash::make('testtest'),
@@ -29,8 +29,8 @@ class UserSeeder extends Seeder
         ]);
 
         User::create([
-            'name' => 'Mosanes',
-            'email' => 'mosanes@mosanes.com',
+            'name' => 'Current Tech',
+            'email' => 'currenttech@currenttech.com',
             'email_verified_at' => now(),
             'password' =>  Hash::make('testtest'),
             'remember_token' => Str::random(10),
