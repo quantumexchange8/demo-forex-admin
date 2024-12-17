@@ -146,15 +146,15 @@ const handleMemberStatus = () => {
         <div class="flex flex-col pb-6 md:pb-5 xl:pb-8 items-start gap-4 self-stretch border-b border-gray-200">
             <div class="flex justify-between items-start self-stretch">
                 <div class="w-20 h-20 grow-0 shrink-0 rounded-full overflow-hidden bg-primary-100">
-                    <div v-if="userDetail">
+                    <div v-if="userDetail" class="h-full">
                         <div v-if="userDetail.profile_photo">
                             <img :src="userDetail.profile_photo" alt="Profile Photo" class="w-full object-cover" />
                         </div>
-                        <div v-else class="p-2">
+                        <div v-else class="p-2 h-full">
                             <DefaultProfilePhoto />
                         </div>
                     </div>
-                    <div v-else class="animate-pulse p-2">
+                    <div v-else class="animate-pulse p-2 h-full">
                         <DefaultProfilePhoto />
                     </div>
                 </div>
@@ -235,7 +235,7 @@ const handleMemberStatus = () => {
                             <div v-if="userDetail.upline_profile_photo">
                                 <img :src="userDetail.upline_profile_photo" alt="Profile Photo" />
                             </div>
-                            <div v-else>
+                            <div v-else class="h-full">
                                 <DefaultProfilePhoto />
                             </div>
                         </div>

@@ -551,4 +551,5 @@ return [
     "toast_permit_granted" => "已授予代理商發帖權限",
     "toast_permit_removed" => "已移除代理商發帖權限",
     "share_your_thoughts_here" => "在此分享您的想法...",
+    "virtual_account" => "虛擬賬戶",
 ];

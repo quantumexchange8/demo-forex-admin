@@ -553,4 +553,5 @@ return [
     "toast_permit_granted" => "Agent permit granted",
     "toast_permit_removed" => "Agent permit removed",
     "share_your_thoughts_here" => "Share your thoughts here...",
+    "virtual_account" => "Virtual Account",
 ];

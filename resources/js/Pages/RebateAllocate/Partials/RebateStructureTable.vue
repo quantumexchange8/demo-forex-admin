@@ -21,12 +21,8 @@ import DefaultProfilePhoto from "@/Components/DefaultProfilePhoto.vue";
 
 const dropdownOptions = [
     {
-        name: wTrans('public.standard_account'),
+        name: wTrans('public.virtual_account'),
         value: 1
-    },
-    {
-        name: wTrans('public.premium_account'),
-        value: 2
     },
 ]
 
