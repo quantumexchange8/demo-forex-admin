@@ -188,7 +188,7 @@ const handleFilter = (e) => {
                                 <div v-if="slotProps.data.user_profile_photo">
                                     <img :src="slotProps.data.user_profile_photo" alt="Profile Photo" />
                                 </div>
-                                <div v-else>
+                                <div v-else class="h-full">
                                     <DefaultProfilePhoto />
                                 </div>
                             </div>
@@ -279,7 +279,7 @@ const handleFilter = (e) => {
                             <div v-if="pendingData.user_profile_photo">
                                 <img :src="pendingData.user_profile_photo" alt="Profile Photo" />
                             </div>
-                            <div v-else>
+                            <div v-else class="h-full">
                                 <DefaultProfilePhoto />
                             </div>
                         </div>
@@ -352,7 +352,7 @@ const handleFilter = (e) => {
                             <div v-if="pendingData.user_profile_photo">
                                 <img :src="pendingData.user_profile_photo" alt="Profile Photo" />
                             </div>
-                            <div v-else>
+                            <div v-else class="h-full">
                                 <DefaultProfilePhoto />
                             </div>
                         </div>

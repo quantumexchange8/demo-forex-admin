@@ -191,7 +191,7 @@ const clearSearch = () => {
                                     <div v-if="upline.profile_photo">
                                         <img :src="upline.profile_photo" alt="Profile Photo" />
                                     </div>
-                                    <div v-else>
+                                    <div v-else class="h-full">
                                         <DefaultProfilePhoto />
                                     </div>
                                 </div>
@@ -296,7 +296,7 @@ const clearSearch = () => {
                                     <div v-if="parent.profile_photo">
                                         <img :src="parent.profile_photo" alt="Profile Photo" />
                                     </div>
-                                    <div v-else>
+                                    <div v-else class="h-full">
                                         <DefaultProfilePhoto />
                                     </div>
                                 </div>
@@ -393,7 +393,7 @@ const clearSearch = () => {
                                     <div v-if="downline.profile_photo">
                                         <img :src="downline.profile_photo" alt="Profile Photo" />
                                     </div>
-                                    <div v-else>
+                                    <div v-else class="h-full">
                                         <DefaultProfilePhoto />
                                     </div>
                                 </div>

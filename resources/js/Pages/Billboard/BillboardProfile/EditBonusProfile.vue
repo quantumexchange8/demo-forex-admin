@@ -70,7 +70,7 @@ const submitForm = () => {
                             <div v-if="profile.profile_photo">
                                 <img :src="profile.profile_photo" alt="Profile Photo" />
                             </div>
-                            <div v-else>
+                            <div v-else class="h-full">
                                 <DefaultProfilePhoto />
                             </div>
                         </div>

@@ -161,7 +161,7 @@ const requireConfirmation = (action_type, postId) => {
                             <div v-if="post.profile_photo">
                                 <img :src="post.profile_photo" alt="Profile Photo" />
                             </div>
-                            <div v-else>
+                            <div v-else class="h-full">
                                 <DefaultProfilePhoto />
                             </div>
                         </div>
